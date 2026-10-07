@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5e7e3"/><stop offset=".55" stop-color="#eee7f5"/><stop offset="1" stop-color="#dfe8df"/></linearGradient>
+ <linearGradient id="coffee" x1="0" x2="1"><stop stop-color="#5d3d2b"/><stop offset="1" stop-color="#9a6949"/></linearGradient>
+</defs>
+<rect width="800" height="900" rx="42" fill="url(#bg)"/>
+<circle cx="120" cy="130" r="85" fill="#fff" opacity=".38"/>
+<circle cx="690" cy="170" r="110" fill="#b593fe" opacity=".12"/>
+<path d="M610 690c50-90 95-135 145-158v260H610z" fill="#8eb096" opacity=".55"/>
+<path d="M650 690c35-110 78-150 125-188" fill="none" stroke="#6f9477" stroke-width="16" stroke-linecap="round"/>
+<ellipse cx="390" cy="770" rx="250" ry="45" fill="#7655a9" opacity=".12"/>
+<!-- carafe -->
+<path d="M245 350h290l-25 310c-5 58-47 92-120 92s-115-34-120-92z" fill="#fff" opacity=".78" stroke="#8f7c9e" stroke-width="5"/>
+<path d="M285 415h210l-15 230c-5 42-34 65-90 65s-85-23-90-65z" fill="url(#coffee)" opacity=".86"/>
+<path d="M260 340h260l-15-45H275z" fill="#c48f64" opacity=".92"/>
+<path d="M275 295h230l-42-65H317z" fill="#fff" opacity=".9" stroke="#8f7c9e" stroke-width="5"/>
+<path d="M340 230h100l35-50H305z" fill="#fff" opacity=".9" stroke="#8f7c9e" stroke-width="5"/>
+<path d="M345 210c5-50-12-72-3-98M395 210c-2-55 17-70 8-102M435 210c3-46 20-61 14-91" fill="none" stroke="#7655a9" stroke-width="8" stroke-linecap="round" opacity=".35"/>
+<path d="M530 455c115-50 180-22 214 42" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" opacity=".65"/>
+<circle cx="660" cy="465" r="18" fill="#fff" opacity=".7"/>
+<g opacity=".9">
+ <circle cx="110" cy="720" r="28" fill="#7655a9"/>
+ <circle cx="155" cy="745" r="19" fill="#9d6a49"/>
+ <circle cx="110" cy="770" r="20" fill="#6d4c3b"/>
+</g>
+</svg>

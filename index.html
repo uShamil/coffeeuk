@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoffeeUK — Kahve Reçete Asistanı</title>
+<meta name="description" content="CoffeeUK kişisel üçüncü dalga kahve reçete asistanı.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#"><img src="img/logo.svg" alt="CoffeeUK"></a>
+      <button class="menu" aria-label="Menü">☰</button>
+    </header>
+
+    <!-- LANDING: only this is visible at first -->
+    <section class="landing" id="landing">
+      <div class="landing-copy">
+        <div class="eyebrow">COFFEEUK · BREW ASSISTANT</div>
+        <h1>Kendine Özel<br><em>Kahve Reçeteni</em><br>Keşfet</h1>
+        <p>Damaktaki zevkine, seçtiğin demleme yöntemine ve elindeki çekirdeğe göre sana özel üçüncü dalga kahve reçeteni oluştur.</p>
+
+        <div class="stats">
+          <div class="stat"><strong>8</strong><span>Demleme Yöntemi</span></div>
+          <div class="stat"><strong>100+</strong><span>Farklı Reçete</span></div>
+          <div class="stat"><strong>∞</strong><span>Profil Kombinasyonu</span></div>
+        </div>
+
+        <button class="primary hero-cta" id="startBtn">Kendi Reçeteni Oluştur <span>→</span></button>
+      </div>
+
+      <div class="landing-art">
+        <div class="art-glow one"></div>
+        <div class="art-glow two"></div>
+        <img src="img/hero-coffee.svg" alt="CoffeeUK kahve demleme">
+        <div class="art-caption">
+          <span>COFFEEUK</span>
+          <strong>Brew your way.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-features">
+      <article><span>01</span><strong>Yöntemini seç</strong><p>V60'dan Cold Brew'e kadar.</p></article>
+      <article><span>02</span><strong>Damak zevkini belirle</strong><p>Gövde, asidite ve tatlılık.</p></article>
+      <article><span>03</span><strong>Reçeteni keşfet</strong><p>Ölçüler ve döküş planı hazır.</p></article>
+    </section>
+
+    <!-- APP: hidden until CTA -->
+    <section class="recipe-app" id="recipeApp" hidden>
+      <div class="app-top">
+        <button class="back-btn" id="backHome">← Ana Sayfa</button>
+        <div class="app-title">
+          <span>COFFEEUK · BREW ASSISTANT</span>
+          <strong>Kendi reçeteni oluştur</strong>
+        </div>
+        <div class="app-progress"><b id="progressText">1 / 6</b></div>
+      </div>
+
+      <div class="workspace">
+        <section class="panel wizard-panel">
+          <div class="stepper" aria-label="Adımlar">
+            <span class="step-dot active"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span><span class="step-dot"></span>
+          </div>
+
+          <div class="step-section" data-step="1">
+            <div class="panel-head"><h2>Ne tür bir kahve<br>istersiniz?</h2><p>Önce kahvenin tarzını seçin.</p></div>
+            <div class="choice-grid coffee-types" id="typeGrid"></div>
+            <button class="primary next-btn" id="nextType">Devam Et <span>→</span></button>
+          </div>
+
+          <div class="step-section" data-step="2" hidden>
+            <div class="panel-head"><h2>Nasıl demlemek<br>istersiniz?</h2><p>Seçtiğiniz kahve tarzına uygun yöntemi belirleyin.</p></div>
+            <div class="choice-grid" id="methodGrid"></div>
+            <button class="primary next-btn" id="next1">Devam Et <span>→</span></button>
+          </div>
+
+          <div class="step-section" data-step="3" hidden>
+            <div class="panel-head"><h2>Nasıl bir tat profili<br>istersiniz?</h2><p>Kahvenizin karakterini seçin.</p></div>
+            <div class="choice-grid flavors" id="profileGrid"></div>
+            <button class="primary next-btn" id="next2">Devam Et <span>→</span></button>
+          </div>
+
+          <div class="step-section" data-step="4" hidden>
+            <div class="panel-head"><h2>Kahveni nasıl<br>seversin?</h2><p>İdeal kahve karakterini belirleyin.</p></div>
+            <div class="sliders">
+              <div class="slider-row"><label>Gövde <span id="bodyVal">Orta</span></label><input id="body" type="range" min="1" max="3" value="2"></div>
+              <div class="slider-row"><label>Asidite <span id="acidityVal">Yüksek</span></label><input id="acidity" type="range" min="1" max="3" value="3"></div>
+              <div class="slider-row"><label>Tatlılık <span id="sweetnessVal">Orta</span></label><input id="sweetness" type="range" min="1" max="3" value="2"></div>
+            </div>
+            <button class="primary next-btn" id="next3">Devam Et <span>→</span></button>
+          </div>
+
+          <div class="step-section" data-step="5" hidden>
+            <div class="panel-head"><h2>Hangi çekirdeği<br>tercih edersiniz?</h2><p>Elinizdeki çekirdeği seçin veya öneri alın.</p></div>
+            <div class="bean-select" id="beanGrid"></div>
+            <button class="primary next-btn" id="next4">Devam Et <span>→</span></button>
+          </div>
+
+          <div class="step-section" data-step="6" hidden>
+            <div class="panel-head"><h2>Kaç fincan<br>demlemek istersin?</h2><p>Miktarı seçin.</p></div>
+            <div class="choice-grid cups" id="cupGrid">
+              <button type="button" class="choice selected" data-cups="1"><span class="check">✓</span><div class="cup-icon">☕</div><strong>1 Fincan</strong><small>150 ml</small></button>
+              <button type="button" class="choice" data-cups="2"><span class="check">✓</span><div class="cup-icon">☕☕</div><strong>2 Fincan</strong><small>300 ml</small></button>
+              <button type="button" class="choice" data-cups="3"><span class="check">✓</span><div class="cup-icon">☕☕☕</div><strong>3 Fincan</strong><small>450 ml</small></button>
+              <button type="button" class="choice" data-cups="4"><span class="check">✓</span><div class="cup-icon">⚖️</div><strong>4 Fincan</strong><small>600 ml</small></button>
+            </div>
+            <button class="primary next-btn" id="generate">Reçetemi Oluştur <span>→</span></button>
+          </div>
+        </section>
+
+        <!-- Before generation this is only a visual teaser, never a final result card -->
+        <aside class="recipe-preview">
+          <div class="preview-art"><img src="img/hero-coffee.svg" alt="CoffeeUK"></div>
+          <div class="preview-copy">
+            <span>COFFEEUK</span>
+            <h3>Senin fincanın,<br>senin karakterin.</h3>
+            <p>Adımları tamamla. Kahve, su, oran, sıcaklık, öğütüm ve döküş planını tek kartta görelim.</p>
+            <div class="mini-line"><i></i><span>6 kısa adım</span></div>
+            <div class="mini-line"><i></i><span>100+ reçete</span></div>
+            <div class="mini-line"><i></i><span>Kişisel profil</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RESULT: dedicated final screen -->
+    <section class="result-screen" id="resultScreen" hidden>
+      <div class="result-header">
+        <button class="back-btn" id="backToWizard">← Tercihleri Düzenle</button>
+        <div><span>COFFEEUK · YOUR RECIPE</span><strong>Senin kahve reçeten</strong></div>
+        <button class="secondary compact" id="newRecipeTop">↻ Yeni Tarif</button>
+      </div>
+      <div class="result-card-wrap">
+        <div class="result-large" id="result"></div>
+      </div>
+    </section>
+
+    <footer>© 2026 CoffeeUK · Brew your way.</footer>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

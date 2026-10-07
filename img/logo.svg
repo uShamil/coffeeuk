@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#7655a9"/><stop offset="1" stop-color="#b593fe"/></linearGradient></defs>
+<g transform="translate(8 8)">
+<circle cx="52" cy="52" r="45" fill="url(#g)" opacity=".14"/>
+<path d="M34 39h42v25c0 14-9 22-21 22S34 78 34 64z" fill="none" stroke="#4d345f" stroke-width="5"/>
+<path d="M76 47h10c10 0 13 18 0 22H76" fill="none" stroke="#4d345f" stroke-width="5" stroke-linecap="round"/>
+<path d="M45 28c-2-10 10-10 8-19M60 28c-2-9 9-11 7-19" fill="none" stroke="#7655a9" stroke-width="4" stroke-linecap="round"/>
+<path d="M42 51h27" stroke="#b593fe" stroke-width="4" stroke-linecap="round"/>
+</g>
+<text x="112" y="72" font-family="Georgia,serif" font-size="48" font-weight="700" fill="#261d2f">Coffee<tspan fill="#7655a9">UK</tspan></text>
+</svg>
